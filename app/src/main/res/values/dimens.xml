@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="standartPadding">10dp</dimen>
+    <dimen name="standartIconSize">30dp</dimen>
+</resources>
