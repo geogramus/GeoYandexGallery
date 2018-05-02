@@ -1,5 +1,6 @@
 package geogram.example.geoyandexgallery.ui.activityes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -7,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabs;
     @BindView(R.id.pages)
     ViewPager pages;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,14 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-        pages.setAdapter(new MainPagerAdapter(getSupportFragmentManager()));
+        List<String> titles = new ArrayList<>();
+        titles.add(getString(R.string.art));
+        titles.add(getString(R.string.nature));
+        titles.add(getString(R.string.auto));
+        pages.setAdapter(new MainPagerAdapter(getSupportFragmentManager(), titles));//устанавливаем
+        // адаптер viewPager, передаем в него названия вкладок
         tabs.setupWithViewPager(pages);
 
-
     }
-
-
-
 
 
     @Override
@@ -51,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
             return true;
         }
 

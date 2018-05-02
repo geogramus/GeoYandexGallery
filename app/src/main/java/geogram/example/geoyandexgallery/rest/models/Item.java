@@ -3,11 +3,15 @@ package geogram.example.geoyandexgallery.rest.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
 /**
  * Created by geogr on 23.04.2018.
  */
 
-public class Item {
+public class Item extends RealmObject {
+    @PrimaryKey
     @SerializedName("file")
     @Expose
     private String file;
@@ -50,6 +54,16 @@ public class Item {
     @SerializedName("size")
     @Expose
     private Integer size;
+
+    private String itemtype;
+
+    public void setItemtype(String itemtype) {
+        this.itemtype = itemtype;
+    }
+    public String getItemtype() {
+        return itemtype;
+    }
+
 
     public String getFile() {
         return file;

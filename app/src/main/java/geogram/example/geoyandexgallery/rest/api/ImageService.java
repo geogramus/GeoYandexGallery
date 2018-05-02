@@ -13,7 +13,7 @@ import retrofit2.http.Query;
 public interface ImageService {
     String header="Authorization: OAuth AQAAAAAl58iKAADLWwMHDJ2qOUS4kgTuqylgprU";
     @Headers(header)
-    @GET("resources?preview_size=L")
+    @GET("resources?preview_size=M")
     Observable<GeneralModel> get_posts(@Query("path")String type, @Query("offset") int offset);
 
 }
