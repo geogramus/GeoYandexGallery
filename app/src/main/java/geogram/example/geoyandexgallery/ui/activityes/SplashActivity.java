@@ -14,9 +14,12 @@ public class SplashActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SystemClock.sleep(1500);//показываем превью 1,5 секунды
+        SystemClock.sleep(1500);
+        //показываем превью 1,5 секунды
         Intent intent=new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);//запускаем основную активность
-        finish();////завершаем превью активити
+        startActivity(intent);
+        //запускаем основную активность
+        finish();
+        ////завершаем превью активити
     }
 }
