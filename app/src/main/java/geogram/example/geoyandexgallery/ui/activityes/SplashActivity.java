@@ -16,7 +16,9 @@ public class SplashActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         SystemClock.sleep(1500);//показываем превью 1,5 секунды
         Intent intent=new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);//запускаем основную активность
-        finish();////завершаем превью активити
+        startActivity(intent);
+        //запускаем основную активность
+        finish();
+        ////завершаем превью активити
     }
 }
